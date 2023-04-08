@@ -13,8 +13,8 @@ function App() {
     <div>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<AcasaPage/>}/>
-        <Route path='/despre_mine' element={<DespreMinePage/>}/> 
+        <Route path='website/' element={<AcasaPage/>}/>
+        <Route path='website/despre_mine' element={<DespreMinePage/>}/> 
         <Route path='/psihozone' element={<PsihozonePage/>}/>     
         <Route path='/servicii' element={<ServiciiPage/>}/>
         <Route path='/contact' element={<ContactPage/>}/>
