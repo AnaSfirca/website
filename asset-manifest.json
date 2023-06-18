@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d333a202.css",
-    "main.js": "/static/js/main.8a18233d.js",
+    "main.css": "/static/css/main.61b71a0c.css",
+    "main.js": "/static/js/main.6db91a96.js",
     "static/media/EBGaramond-VariableFont_wght.otf": "/static/media/EBGaramond-VariableFont_wght.b4d8069b86082c0a0428.otf",
     "static/media/2.png": "/static/media/2.d9392e7f4990ffdd9126.png",
     "static/media/3.png": "/static/media/3.3c4a2e5cf5a6107c76f6.png",
@@ -15,10 +15,10 @@
     "static/media/Quicksand-Regular.otf": "/static/media/Quicksand-Regular.dd4f0dd06e30259d7ab6.otf",
     "static/media/Quicksand-Light.otf": "/static/media/Quicksand-Light.2a624b6b5b1bf859bc61.otf",
     "static/media/ana.png": "/static/media/ana.99869440b808e954fba7.png",
-    "static/media/poza_50.png": "/static/media/poza_50.a6218d490ed283eff96e.png",
     "static/media/PSIHOTERAPIA FUNCT.png": "/static/media/PSIHOTERAPIA FUNCT.688c2bda69e7e276d897.png",
     "static/media/chenar-mov.png": "/static/media/chenar-mov.51971fba43bf656263ba.png",
     "static/media/fundal-despre-mine.jpg": "/static/media/fundal-despre-mine.d582f3236e7dbb1ab76f.jpg",
+    "static/media/atelier_psihozone.jpeg": "/static/media/atelier_psihozone.6ca3901f19ee5e266003.jpeg",
     "static/media/tematica-final.png": "/static/media/tematica-final.06c97d6bc516c05c9d7e.png",
     "static/media/punctulete2.png": "/static/media/punctulete2.036aebbf34828d0188be.png",
     "static/media/bla bla.png": "/static/media/bla bla.13a0219bdf87b2f46c66.png",
@@ -27,11 +27,11 @@
     "static/media/poza-articol-Psihoterapia-online.png": "/static/media/poza-articol-Psihoterapia-online.6dd7a29ec62840a923f0.png",
     "static/media/creative-area-logo.png": "/static/media/creative-area-logo.57215102c122008f60d4.png",
     "index.html": "/index.html",
-    "main.d333a202.css.map": "/static/css/main.d333a202.css.map",
-    "main.8a18233d.js.map": "/static/js/main.8a18233d.js.map"
+    "main.61b71a0c.css.map": "/static/css/main.61b71a0c.css.map",
+    "main.6db91a96.js.map": "/static/js/main.6db91a96.js.map"
   },
   "entrypoints": [
-    "static/css/main.d333a202.css",
-    "static/js/main.8a18233d.js"
+    "static/css/main.61b71a0c.css",
+    "static/js/main.6db91a96.js"
   ]
 }
