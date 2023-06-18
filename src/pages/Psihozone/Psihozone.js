@@ -1,5 +1,5 @@
 import linie from '../../media/linie-chenar-jum.png';
-import poza from './media/poza_50.png';
+import atelier_psihozone from './media/atelier_psihozone.jpeg';
 import creative from './media/creative-area-logo.png';
 import Contact from '../../components/Contact/Contact';
 import punctulete from './media/tematica-final.png'
@@ -21,7 +21,7 @@ function PsihozonePage()
                     <img src={linie} alt="linie" className="mb-4 md:mb-0 md:mt-4"/>
                 </div>
                 <div>
-                    <img src={poza} alt="poza" className="w-64 md:w-80 md:my-0 md:mt-0 mt-4"/>
+                    <img src={atelier_psihozone} alt="atelier psihozone" className="w-64 md:w-80 md:my-0 md:mt-0 mt-4 rounded-md"/>
                 </div>
             </div>
 
