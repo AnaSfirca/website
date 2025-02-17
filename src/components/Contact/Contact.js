@@ -17,7 +17,7 @@ function Contact()
         </li>
         <li className="flex flex-row items-center pl-[10%] md:pl-[44%]">
             <img className="w-4 mr-2 drop-shadow-lg" src={locatie} alt="locatie"/>
-            <div className="font-Quicksand_Regular text-gray-700">Corneliu Coposu 5, bl. 103, <br/>sc. 3, et. 2, ap. 53, București</div>
+            <div className="font-Quicksand_Regular text-gray-700">Corneliu Coposu 5, <br/> București</div>
         </li>
         <li className="flex flex-row items-center pl-[10%] md:pl-[44%] mb-2">
             <img className="w-5 mr-2 drop-shadow-lg" src={mail} alt="mail"/>
