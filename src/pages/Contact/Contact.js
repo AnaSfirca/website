@@ -31,7 +31,7 @@ function ContactPage()
                 </li>
                 <li className="flex flex-row space-x-4 text-xl">
                     <img src={buton_locatie} alt="adresa" className="object-contain drop-shadow-lg ml-1"/>
-                    <div className="text-gray-800 font-Quicksand_Regular">Corneliu Coposu 5, <br/> București</div>
+                    <div className="text-gray-800 font-Quicksand_Regular">Corneliu Coposu 5, București</div>
                 </li>
                 <li className="flex flex-row space-x-4 text-xl">
                     <img src={calendar} alt="orar" className="object-contain drop-shadow-lg ml-1"/>
