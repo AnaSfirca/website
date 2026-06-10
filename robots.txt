@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: https://www.anasfircapsiholog.ro/sitemap.xml

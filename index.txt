@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ================= SEO & META TAGS ================= -->
+    <title>Ana-Maria Ștefania Sfircă | Cabinet Individual de Psihologie</title>
+    
+    <meta name="description" content="Cabinet de psihoterapie integrativă în București, Sector 3 și online. Spațiu sigur pentru gestionarea anxietății, depresiei și dezvoltare personală alături de Ana-Maria Ștefania Sfircă.">
+    <meta name="keywords" content="psihoterapie, psihoterapeut bucuresti, cabinet psihologie sector 3, terapie individuala, sedinte online, anxietate, depresie, Ana-Maria Stefania Sfirca">
+    <meta name="author" content="Ana-Maria Ștefania Sfircă">
+     
+    <!-- URL-ul Canonic (Înlocuiește cu domeniul real) -->
+    <link rel="canonical" href="https://www.anasfircapsiholog.ro/">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.anasfircapsiholog.ro/"> 
+    <meta property="og:title" content="Ana-Maria Ștefania Sfircă | Cabinet Individual de Psihologie">
+    <meta property="og:description" content="Pași concreți către schimbarea dorită. Psihoterapie integrativă, ședințe individuale la cabinet și online.">
+    <meta property="og:image" content="https://www.anasfircapsiholog.ro/cabinet-bg.jpeg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.anasfircapsiholog.ro/">
+    <meta name="twitter:title" content="Ana-Maria Ștefania Sfircă | Cabinet Individual de Psihologie">
+    <meta name="twitter:description" content="Pași concreți către schimbarea dorită. Psihoterapie integrativă, ședințe individuale la cabinet și online.">
+    <meta property="twitter:image" content="https://www.anasfircapsiholog.ro/cabinet-bg.jpeg">
+
+    <!-- Schema.org (Ajută Google să înțeleagă exact afacerea și locația) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Cabinet Individual de Psihologie Ana-Maria Ștefania Sfircă",
+      "image": "https://www.anasfircapsiholog.ro/portret.jpg",
+      "@id": "https://www.anasfircapsiholog.ro/",
+      "url": "https://www.anasfircapsiholog.ro/",
+      "telephone": "+40771611430",
+      "email": "anamariasfirca.psiholog@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Strada Panait Cerna, Nr. 10",
+        "addressLocality": "București",
+        "addressRegion": "București",
+        "addressCountry": "RO"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+    <!-- ================= END SEO & META TAGS ================= -->
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconițe Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+        :root {
+            --brand-soft: #f7f3f1;
+            --brand-primary: #cea18d; 
+            --brand-accent: #6b403c;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Fix pentru alb-negru fără a afecta butoanele fixe */
+        html.grayscale-mode {
+            filter: grayscale(100%) !important;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Lenis Smooth Scroll CSS */
+        html.lenis {
+          height: auto;
+        }
+        .lenis.lenis-smooth {
+          scroll-behavior: auto;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+          overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+          overflow: hidden;
+        }
+
+        /* Animație Fade In */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism Nav */
+        .glass-nav {
+            background: rgba(247, 243, 241, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(74, 68, 66, 0.05);
+        }
+
+        /* Styling Acordeon Smooth Corectat */
+        .modern-accordion-item {
+            transition: all 0.3s ease;
+        }
+        .modern-accordion-item:hover, .modern-accordion-item.active {
+            background-color: #fcfcfc;
+            border-color: rgba(206, 161, 141, 0.4);
+        }
+        .modern-accordion-header .icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .modern-accordion-header.active .icon {
+            transform: rotate(180deg);
+        }
+        .modern-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Scrollbar subtire și fin pentru FAQ */
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f7f3f1;
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #6b403c; /* Culoarea modificată aici */
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #54322f; /* Culoarea la hover */
+        }
+
+        /* Buton Inapoi Sus */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--brand-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border: none;
+            outline: none;
+        }
+        #backToTop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        #backToTop:hover {
+            background-color: #333;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Widget Accesibilitate */
+        #accessibility-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+        }
+        #accessibilityBtn {
+            width: 50px;
+            height: 50px;
+            background-color: var(--brand-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        #accessibilityBtn:hover {
+            transform: scale(1.1);
+        }
+        .accessibility-menu {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 1rem;
+            width: 240px;
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .accessibility-menu.active {
+            display: flex;
+        }
+        .accessibility-menu button {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #4a4442;
+            width: 100%;
+        }
+        .accessibility-menu button:hover {
+            background-color: var(--brand-soft);
+            color: var(--brand-accent);
+        }
+
+        /* Cookie Banner CSS */
+        .cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--brand-primary); color: #fff; padding: 20px; box-shadow: 0 -5px 15px rgba(0,0,0,0.2); z-index: 9999; font-family: 'Inter', sans-serif; display: none; }
+        .cookie-content { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+        .cookie-text { margin: 0; font-size: 14px; line-height: 1.5; color: #ffffff; flex: 1; min-width: 300px; }
+        .cookie-actions { display: flex; gap: 10px; align-items: center; }
+        .btn-cookie { padding: 9px 25px; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+        .btn-cookie-accept { background-color: #6b403c; color: #fff; border: none; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .btn-cookie-accept:hover { background-color: #54322f; }
+        .btn-cookie-reject { background-color: transparent; color: #fff; border: 1px solid #fff; }
+        .btn-cookie-reject:hover { background-color: rgba(255, 255, 255, 0.1); }
+        .cookie-link { color: #fff; text-decoration: underline; font-size: 13px; margin-right: 10px; opacity: 0.8; transition: opacity 0.3s; }
+        .cookie-link:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .cookie-content { flex-direction: column; text-align: center; }
+            .cookie-actions { justify-content: center; width: 100%; }
+            #backToTop { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            #accessibility-widget { bottom: 20px; left: 20px; }
+        }
+    </style>
+</head>
+<body class="bg-[#f7f3f1] text-[#4a4442] antialiased selection:bg-[#cea18d] selection:text-white">
+
+    <!-- Navigație Fluidă și Adaptabilă -->
+    <nav class="fixed w-full z-50 glass-nav transition-transform duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 py-2 md:h-20 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+            <!-- Logo imagine -->
+            <a href="index.html" class="flex items-center group">
+                <img src="logo.png" alt="Logo Cabinet" class="h-10 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            </a>
+            
+            <!-- Linkuri Central (vizibile pe mobil și desktop) -->
+            <div class="flex items-center justify-center flex-wrap gap-4 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
+                <a href="index.html" class="text-[#cea18d] relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#cea18d]">Acasă</a>
+                <a href="despre.html" class="hover:text-[#cea18d] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">Despre</a>
+                
+                <!-- Dropdown Servicii -->
+                <div class="relative group py-6">
+                    <a href="javascript:void(0)" class="hover:text-[#cea18d] transition-colors relative flex items-center gap-1.5 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">
+                        Servicii <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>
+                    </a>
+                    <!-- Submeniu ascuns implicit, vizibil la hover -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-[70%] mt-2 w-64 bg-white border border-[#4a4442]/5 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col overflow-hidden">
+                        <a href="servicii.html" class="px-4 py-3 md:px-5 md:py-4 text-xs md:text-sm font-medium text-[#4a4442]/80 hover:bg-[#f7f3f1] hover:text-[#cea18d] transition-colors border-b border-[#4a4442]/5">Servicii Oferite</a>
+                        <a href="cadru-terapeutic.html" class="px-4 py-3 md:px-5 md:py-4 text-xs md:text-sm font-medium text-[#4a4442]/80 hover:bg-[#f7f3f1] hover:text-[#cea18d] transition-colors">Cadru Terapeutic & Politici</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="hover:text-[#cea18d] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">Contact</a>
+            </div>
+
+            <!-- Social Icons & Contact (vizibile pe mobil și desktop) -->
+            <div class="flex items-center gap-3 md:gap-4 pb-2 md:pb-0">
+                 <a href="https://wa.me/40771611430" target="_blank" class="w-7 h-7 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                    <i data-lucide="message-circle" class="w-3 h-3 md:w-4 md:h-4"></i>
+                </a>
+                <a href="mailto:anamariasfirca.psiholog@gmail.com" class="w-7 h-7 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                    <i data-lucide="mail" class="w-3 h-3 md:w-4 md:h-4"></i>
+                </a>
+                <a href="https://instagram.com/anasfirca_psihozone" target="_blank" class="w-7 h-7 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 md:w-4 md:h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                
+                <div class="w-px h-5 bg-[#4a4442]/20 mx-0.5 md:mx-1 hidden md:block"></div>
+
+                <a href="contact.html" class="px-4 py-2 md:px-5 md:py-2.5 bg-[#6b403c] text-white rounded-lg hover:bg-[#54322f] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 text-xs md:text-sm font-medium uppercase tracking-wide">Programări</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secțiunea Hero (Padding ajustat pentru a face loc noului meniu pe mobil) -->
+    <section id="acasa" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-36 md:pt-16">
+        <!-- Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[#f7f3f1]/85 z-10 backdrop-blur-[1px]"></div>
+            <img src="cabinet-bg.jpeg" 
+                 onerror="this.src='https://images.unsplash.com/photo-1633519894435-02b8d035414f?q=80&w=2500&auto=format&fit=crop'"
+                 alt="Cabinet Psihoterapie Atmosfera" 
+                 class="w-full h-full object-cover object-center opacity-60">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-20 max-w-3xl mx-auto text-center px-6 fade-in mt-4">
+            <span class="block text-[#cea18d] font-medium tracking-widest uppercase mb-8 md:mb-10 text-xs md:text-sm">Sfircă Ana-Maria Ștefania <br class="hidden md:block"/> Cabinet Individual de Psihologie</span>
+            <h1 class="text-4xl md:text-6xl mb-12 md:mb-16 leading-tight font-medium text-[#4a4442] drop-shadow-sm">
+                Pași concreți către <br class="hidden md:block"/> <span class="text-[#cea18d] italic">schimbarea</span> dorită.
+            </h1>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="contact.html" class="w-full md:w-auto px-8 py-3 bg-[#6b403c] text-white rounded-full text-base font-medium hover:bg-[#54322f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    Începe procesul
+                </a>
+                <a href="despre.html" class="w-full md:w-auto px-8 py-3 border border-[#4a4442]/20 text-[#4a4442]/90 bg-white/50 backdrop-blur-sm rounded-full text-base font-medium hover:bg-[#fcfafa] hover:text-[#cea18d] hover:border-[#cea18d] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    Află mai multe
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Despre Mine -->
+    <section id="despre" class="py-20 bg-[#fdfcfb] relative overflow-hidden">
+        <!-- Element decorativ fundal -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#cea18d]/10 -z-10 rounded-l-[100px]"></div>
+
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in order-2 md:order-1">
+                <div class="relative group">
+                    <img src="portret.jpg" 
+                         alt="Portret Psihoterapeut" 
+                         style="image-rendering: high-quality; image-rendering: -webkit-optimize-contrast;"
+                         class="rounded-2xl relative z-10 w-full shadow-2xl transition-all duration-500 object-cover h-[450px] transform-gpu">
+                </div>
+            </div>
+            
+            <div class="fade-in order-1 md:order-2">
+                <h2 class="text-3xl md:text-4xl mb-6 text-[#4a4442]">Salut, sunt Ana</h2>
+                <div class="space-y-6 text-lg text-[#4a4442]/80 leading-relaxed font-light">
+                    <p>
+                        În cabinetul meu vei găsi un spațiu de <strong class="text-[#cea18d] font-medium">siguranță emoțională</strong>, unde poți vorbi deschis despre ce te preocupă. Într-un cadru bazat pe empatie și deschidere, te sprijin în a reduce presiunea de a te conforma, făcând astfel loc unei cunoașteri de sine autentice.</p>
+                    <p>
+                        Ca <strong class="text-[#cea18d] font-medium">psihoterapeut</strong> cu peste 5 ani de experiență în lucrul cu adulții, lucrez într-o manieră <strong class="text-[#cea18d] font-medium">integrativă</strong>, abordare ce prezintă avantajul unui proces terapeutic complet, ce permite atât gestionarea dificultăților imediate, cât și explorarea cauzelor profunde.
+                    </p>
+                    <p>
+                        Te însoțesc spre <strong class="text-[#cea18d] font-medium">claritate, autonomie și echilibru</strong>, prin dezvoltarea unei relații mai blânde cu tine și prin alegeri zilnice benefice, în acord cu cine ești tu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicii -->
+    <section id="servicii" class="py-20 bg-[#f7f3f1]">
+        <div class="max-w-6xl mx-auto px-6 mb-12 fade-in text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-3xl md:text-4xl mb-4 text-[#4a4442]">Cum putem lucra împreună</h2>
+                <p class="text-[#4a4442]/70 text-lg italic font-light">Ședințele se pot desfășura la cabinet sau online. Alege modalitatea care ți se potrivește.</p>
+            </div>
+            <a href="servicii.html" class="hidden md:inline-flex items-center gap-2 text-[#6b403c] font-semibold hover:gap-4 transition-all">
+                Vezi toate detaliile <i data-lucide="arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+            <!-- Card 1 -->
+            <a href="servicii.html#individuala" style="-webkit-mask-image: -webkit-radial-gradient(white, black);" class="group relative isolate transform-gpu rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in min-h-[420px] flex flex-col justify-end p-8 overflow-hidden z-10 cursor-pointer">
+                <!-- Slot pentru poză pe tot fundalul -->
+                <img src="poza-individuala.jpeg" 
+                     alt="Psihoterapie Individuală" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 -z-20">
+                
+                <!-- Overlay gradient pentru lizibilitate -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#4a4442] via-[#4a4442]/50 to-transparent -z-10"></div>
+
+                <!-- Conținut -->
+                <div class="relative z-20 mt-auto">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#cea18d] transition-colors duration-300">
+                        <i data-lucide="user" class="text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl mb-3 font-medium text-white">Psihoterapie Individuală</h3>
+                                       <div class="pt-6 border-t border-white/20 flex justify-between items-center">
+                        <span class="text-xs text-white font-medium bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full tracking-wide">50 MIN</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="servicii.html#online" style="-webkit-mask-image: -webkit-radial-gradient(white, black);" class="group relative isolate transform-gpu rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 fade-in min-h-[420px] flex flex-col justify-end p-8 overflow-hidden z-10 cursor-pointer">
+                <!-- Slot pentru poză pe tot fundalul -->
+                <img src="poza-online.jpeg" 
+                     alt="Ședințe online" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 -z-20">
+                
+                <!-- Overlay gradient pentru lizibilitate -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#4a4442] via-[#4a4442]/50 to-transparent -z-10"></div>
+
+                <!-- Conținut -->
+                <div class="relative z-20 mt-auto">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#cea18d] transition-colors duration-300">
+                        <i data-lucide="laptop" class="text-white w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl mb-3 font-medium text-white">Psihoterapie online</h3>
+                    
+                    <div class="pt-6 border-t border-white/20 flex justify-between items-center">
+                        <span class="text-xs text-white font-medium bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full tracking-wide">50 MIN</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ (6 Casete, 2 Coloane, JS Acordeon Veritabil) -->
+    <section id="faq" class="py-20 bg-[#fdfcfb]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl text-center mb-12 fade-in text-[#4a4442]">Întrebări Frecvente</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 fade-in" id="faq-container">
+                
+                <!-- COLOANA STÂNGA -->
+                <div class="space-y-4">
+                    <!-- Caseta 1 -->
+                    <div class="modern-accordion-item border border-[#4a4442]/10 rounded-2xl bg-[#f7f3f1]">
+                        <button class="modern-accordion-header w-full flex justify-between items-center p-6 font-medium text-lg text-[#4a4442] outline-none text-left">
+                            <span>Care este frecvența recomandată a ședințelor?</span>
+                            <i data-lucide="chevron-down" class="icon text-[#4a4442]/50 shrink-0 ml-4"></i>
+                        </button>
+                        <div class="modern-accordion-content">
+                            <div class="pb-6 px-6">
+                                <div data-lenis-prevent class="custom-scroll pr-3 text-[#4a4442]/80 leading-relaxed pl-3 border-l-2 border-[#cea18d]/40 max-h-[160px] overflow-y-auto text-sm md:text-base font-light">
+                                    De regulă, o ședință pe săptămână. Acest ritm oferă continuitate procesului și îți permite să integrezi mai ușor cele discutate, în viața de zi cu zi. În perioadele dificile, frecvența poate fi ajustată.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caseta 2 -->
+                    <div class="modern-accordion-item border border-[#4a4442]/10 rounded-2xl bg-[#f7f3f1]">
+                        <button class="modern-accordion-header w-full flex justify-between items-center p-6 font-medium text-lg text-[#4a4442] outline-none text-left">
+                            <span>Cum se desfășoară prima ședință?</span>
+                            <i data-lucide="chevron-down" class="icon text-[#4a4442]/50 shrink-0 ml-4"></i>
+                        </button>
+                        <div class="modern-accordion-content">
+                            <div class="pb-6 px-6">
+                                <div data-lenis-prevent class="custom-scroll pr-3 text-[#4a4442]/80 leading-relaxed pl-3 border-l-2 border-[#cea18d]/40 max-h-[160px] overflow-y-auto text-sm md:text-base font-light">
+                                    Este o întâlnire de cunoaștere în care discutăm despre motivele care te-au adus aici. De regulă, primele 2-3 ședințe se concentrează mai mult pe a înțelege contextul tău de viață și experiențele care te-au modelat. Aceste detalii ne ajută să setăm obiective de lucru clare și în acord cu nevoile tale.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caseta 3 -->
+                    <div class="modern-accordion-item border border-[#4a4442]/10 rounded-2xl bg-[#f7f3f1]">
+                        <button class="modern-accordion-header w-full flex justify-between items-center p-6 font-medium text-lg text-[#4a4442] outline-none text-left">
+                            <span>Cât durează procesul psihoterapeutic?</span>
+                            <i data-lucide="chevron-down" class="icon text-[#4a4442]/50 shrink-0 ml-4"></i>
+                        </button>
+                        <div class="modern-accordion-content">
+                            <div class="pb-6 px-6">
+                                <div data-lenis-prevent class="custom-scroll pr-3 text-[#4a4442]/80 leading-relaxed pl-3 border-l-2 border-[#cea18d]/40 max-h-[160px] overflow-y-auto text-sm md:text-base font-light">
+                                    Durata variază în funcție de complexitatea obiectivelor și de implicarea ta în acest demers, fiind susținută de relația terapeutică pe care o construim. Totodată, ritmul poate fi influențat de evenimentele din viața ta care apar pe parcurs, permițându-ne să ajustăm direcția astfel încât procesul să rămână mereu adaptat nevoilor tale.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLOANA DREAPTA -->
+                <div class="space-y-4">
+                    <!-- Caseta 4 -->
+                    <div class="modern-accordion-item border border-[#4a4442]/10 rounded-2xl bg-[#f7f3f1]">
+                        <button class="modern-accordion-header w-full flex justify-between items-center p-6 font-medium text-lg text-[#4a4442] outline-none text-left">
+                            <span>Mă pot retrage oricând din terapie?</span>
+                            <i data-lucide="chevron-down" class="icon text-[#4a4442]/50 shrink-0 ml-4"></i>
+                        </button>
+                        <div class="modern-accordion-content">
+                            <div class="pb-6 px-6">
+                                <div data-lenis-prevent class="custom-scroll pr-3 text-[#4a4442]/80 leading-relaxed pl-3 border-l-2 border-[#cea18d]/40 max-h-[160px] overflow-y-auto text-sm md:text-base font-light">
+                                    Da, este dreptul tău să închei procesul oricând dorești. Recomand totuși o ședință de încheiere în care să revedem ce am lucrat împreună și să ne asigurăm că rămâi cu o direcție clară pentru viitor.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caseta 5 -->
+                    <div class="modern-accordion-item border border-[#4a4442]/10 rounded-2xl bg-[#f7f3f1]">
+                        <button class="modern-accordion-header w-full flex justify-between items-center p-6 font-medium text-lg text-[#4a4442] outline-none text-left">
+                            <span>Cum știu că terapia funcționează?</span>
+                            <i data-lucide="chevron-down" class="icon text-[#4a4442]/50 shrink-0 ml-4"></i>
+                        </button>
+                        <div class="modern-accordion-content">
+                            <div class="pb-6 px-6">
+                                <div data-lenis-prevent class="custom-scroll pr-3 text-[#4a4442]/80 leading-relaxed pl-3 border-l-2 border-[#cea18d]/40 max-h-[160px] overflow-y-auto text-sm md:text-base font-light">
+                                    Semnele schimbării se pot resimți diferit de la persoană la persoană, însă iată câteva repere:
+                                    <ul class="space-y-3 mt-4 list-none">
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-[#cea18d] mt-1 shrink-0"></i>
+                                            <span><strong class="font-medium text-[#4a4442]">Gestionarea emoțiilor:</strong> împrietenirea cu propriile emoții, dezvoltarea abilității de autoreglare, creșterea toleranței la frustrare și incertitudine.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-[#cea18d] mt-1 shrink-0"></i>
+                                            <span><strong class="font-medium text-[#4a4442]">Claritate mentală:</strong> înțelegerea gândurilor ce te copleșesc și a reacțiilor ce provoacă disconfort, alături de strategii practice pentru a le gestiona.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-[#cea18d] mt-1 shrink-0"></i>
+                                            <span><strong class="font-medium text-[#4a4442]">Relații mai sănătoase:</strong> înțelegerea propriului stil de atașament și a dinamicilor care mențin anumite dificultăți, o mai bună capacitate de a seta limite, cultivarea parteneriatului în relația de cuplu.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-[#cea18d] mt-1 shrink-0"></i>
+                                            <span><strong class="font-medium text-[#4a4442]">Relația cu sine:</strong> mai multă empatie și răbdare față de propria persoană, o mai bună capacitate de recunoaștere și împlinire a nevoilor de bază.</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-4 h-4 text-[#cea18d] mt-1 shrink-0"></i>
+                                            <span><strong class="font-medium text-[#4a4442]">Încredere în sine:</strong> dezvoltarea încrederii în resursele și abilitățile tale de a face față provocărilor vieții.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Caseta 6 -->
+                    <div class="modern-accordion-item border border-[#4a4442]/10 rounded-2xl bg-[#f7f3f1]">
+                        <button class="modern-accordion-header w-full flex justify-between items-center p-6 font-medium text-lg text-[#4a4442] outline-none text-left">
+                            <span>De ce am nevoie pentru ședințele online?</span>
+                            <i data-lucide="chevron-down" class="icon text-[#4a4442]/50 shrink-0 ml-4"></i>
+                        </button>
+                        <div class="modern-accordion-content">
+                            <div class="pb-6 px-6">
+                                <div data-lenis-prevent class="custom-scroll pr-3 text-[#4a4442]/80 leading-relaxed pl-3 border-l-2 border-[#cea18d]/40 max-h-[160px] overflow-y-auto text-sm md:text-base font-light">
+                                    De bază sunt: o conexiune stabilă la internet, un dispozitiv cu microfon și cameră (de preferat, laptop sau tabletă) și cel mai important, un spațiu privat unde să poți vorbi liber, fără a fi întrerupt/ă.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact (Editable Section) -->
+    <section id="contact" class="py-20 bg-[#cea18d] text-white relative overflow-hidden">
+        <!-- Decorativ -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-16 relative z-10">
+            <div class="fade-in md:col-span-7">
+                <!-- AICI POȚI MODIFICA TITLUL ȘI TEXTUL DIRECT ÎN NOTEPAD -->
+                <h2 class="text-3xl md:text-4xl mb-6 font-medium text-[#fdfcfb]">Formular de contact</h2>
+                <p class="text-[#fcfafa]/90 mb-10 text-lg font-light leading-relaxed">
+                    Psihoterapia începe cu decizia ta de a-ți prioritiza starea de bine.  
+                    <br><br>
+                    Completează formularul și te voi contacta în termen de 24 de ore (luni-vineri) pentru a stabili detaliile unei ședințe inițiale.
+                </p>
+                
+                <div class="space-y-8 mt-12">
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shrink-0">
+                            <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="min-w-0"> <!-- Previne overflow email -->
+                            <span class="block text-sm text-white/80 uppercase tracking-widest mb-1">Email</span>
+                            <span class="text-[15px] sm:text-xl font-medium text-white break-all">anamariasfirca.psiholog@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <div class="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shrink-0">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <span class="block text-sm text-white/80 uppercase tracking-widest mb-1">Locație</span>
+                            <span class="text-xl font-medium text-white">București, Sector 3, str. Panait Cerna, nr. 10</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-5">
+                         <div class="w-14 h-14 bg-white/15 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shrink-0">
+                            <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <span class="block text-sm text-white/80 uppercase tracking-widest mb-1">Telefon</span>
+                            <span class="text-xl font-medium text-white">0771 611 430</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#fcfafa] p-8 md:p-10 rounded-3xl shadow-2xl fade-in border border-white/30 md:col-span-5">
+                <form onsubmit="event.preventDefault(); this.innerHTML = '<div class=\'text-center py-10 fade-in visible\'><i data-lucide=\'check-circle\' class=\'w-16 h-16 text-[#cea18d] mx-auto mb-4\'></i><h3 class=\'text-2xl font-medium text-[#4a4442] mb-2\'>Mesaj trimis!</h3><p class=\'text-[#4a4442]/70\'>Te voi contacta în cel mai scurt timp.</p></div>'; lucide.createIcons();" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-[#4a4442] ml-1">Nume Complet</label>
+                        <input type="text" required placeholder="Ex: Maria Ionescu" class="w-full p-4 rounded-xl bg-[#f7f3f1] border border-[#4a4442]/10 focus:border-[#cea18d] focus:bg-white focus:ring-4 focus:ring-[#cea18d]/10 text-[#4a4442] transition-all outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-[#4a4442] ml-1">Email</label>
+                        <input type="email" required placeholder="exemplu@mail.com" class="w-full p-4 rounded-xl bg-[#f7f3f1] border border-[#4a4442]/10 focus:border-[#cea18d] focus:bg-white focus:ring-4 focus:ring-[#cea18d]/10 text-[#4a4442] transition-all outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-[#4a4442] ml-1">Număr de Telefon</label>
+                        <input type="tel" required placeholder="07XX XXX XXX" class="w-full p-4 rounded-xl bg-[#f7f3f1] border border-[#4a4442]/10 focus:border-[#cea18d] focus:bg-white focus:ring-4 focus:ring-[#cea18d]/10 text-[#4a4442] transition-all outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-[#4a4442] ml-1">Mesaj (Opțional)</label>
+                        <textarea rows="4" placeholder="..." class="w-full p-4 rounded-xl bg-[#f7f3f1] border border-[#4a4442]/10 focus:border-[#cea18d] focus:bg-white focus:ring-4 focus:ring-[#cea18d]/10 text-[#4a4442] transition-all outline-none resize-none"></textarea>
+                    </div>
+                    <button class="w-full py-4 bg-[#6b403c] text-white rounded-xl font-bold text-lg hover:shadow-xl hover:bg-[#54322f] transition-all active:scale-[0.98] mt-2">
+                        Solicită Programare
+                    </button>
+                    <p class="text-center text-xs text-[#4a4442]/60 mt-4">
+                        Datele tale sunt confidențiale și vor fi folosite exclusiv pentru a te contacta.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#4a4442] text-[#f7f3f1]/70 border-t border-[#3a3533]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="index.html" class="flex items-center group">
+                <img src="logo.png" alt="Logo Cabinet" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 opacity-90 hover:opacity-100 brightness-0 invert">
+            </a>
+            <div class="text-xs text-[#f7f3f1]/50 text-center flex flex-col gap-2">
+                <span>&copy; <span id="year"></span> Sfirca Ana-Maria Stefania Cabinet Individual de Psihologie. Toate drepturile rezervate.</span>
+                <a href="politici.html" class="hover:text-white transition-colors underline">Termeni și Politici</a>
+            </div>
+            <div class="flex gap-4"></div>
+        </div>
+    </footer>
+
+    <!-- Bara de Cookie -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>Acest site folosește cookie-uri pentru a analiza traficul și a îmbunătăți experiența. Poți accepta sau refuza fișierele non-esențiale.</p>
+            </div>
+            <div class="cookie-actions">
+                <a href="politici.html" class="cookie-link">Detalii</a>
+                <button id="reject-cookies" class="btn-cookie btn-cookie-reject">Nu sunt de acord</button>
+                <button id="accept-cookies" class="btn-cookie btn-cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buton plutitor Inapoi Sus -->
+    <button id="backToTop" title="Înapoi sus">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Widget Accesibilitate -->
+    <div id="accessibility-widget">
+        <button id="accessibilityBtn" title="Accesibilitate"><i data-lucide="user" class="w-6 h-6"></i></button>
+        <div class="accessibility-menu" id="accessibilityMenu">
+            <button onclick="changeFontSize(2)"><i data-lucide="zoom-in" class="w-4 h-4"></i> Mărește textul</button>
+            <button onclick="changeFontSize(-2)"><i data-lucide="zoom-out" class="w-4 h-4"></i> Micșorează textul</button>
+            <button onclick="toggleGrayscale()"><i data-lucide="eye" class="w-4 h-4"></i> Alb-negru</button>
+            <button onclick="speakContent()"><i data-lucide="mic" class="w-4 h-4"></i> Narator vocal</button>
+            <button onclick="resetAccessibility()"><i data-lucide="rotate-ccw" class="w-4 h-4"></i> Resetare</button>
+        </div>
+    </div>
+
+    <script>
+        // Logica pentru resetare scroll la inceputul paginii la refresh
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // Inițializare Lenis
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Footer An
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Intersection Observer pentru Fade In
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // --- SMART HEADER LOGIC (Mobil) ---
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 900) {
+                if (window.scrollY > lastScrollY && window.scrollY > 50) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScrollY = window.scrollY;
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+        });
+
+        // FAQ Logic: Acordeon JS
+        const accordions = document.querySelectorAll('.modern-accordion-header');
+        
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                const item = this.parentElement;
+                const content = this.nextElementSibling;
+                
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    item.classList.remove('active');
+                    content.style.maxHeight = '0px'; 
+                    return;
+                }
+
+                accordions.forEach(otherAcc => {
+                    if (otherAcc !== this && otherAcc.classList.contains('active')) {
+                        otherAcc.classList.remove('active');
+                        otherAcc.parentElement.classList.remove('active');
+                        otherAcc.nextElementSibling.style.maxHeight = '0px';
+                    }
+                });
+
+                this.classList.add('active');
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            });
+        });
+
+        // --- BUTON BACK TO TOP ---
+        const btt = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                btt.classList.add('visible');
+            } else {
+                btt.classList.remove('visible');
+            }
+        });
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- WIDGET ACCESIBILITATE ---
+        const accBtn = document.getElementById('accessibilityBtn');
+        const accMenu = document.getElementById('accessibilityMenu');
+        
+        accBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            accMenu.classList.toggle('active');
+        });
+        document.addEventListener('click', () => {
+            accMenu.classList.remove('active');
+        });
+        accMenu.addEventListener('click', (e) => e.stopPropagation());
+
+        function changeFontSize(step) {
+            const elements = document.querySelectorAll('p, span, li, h1, h2, h3, h4, a');
+            elements.forEach(el => {
+                const style = window.getComputedStyle(el);
+                const currentSize = parseFloat(style.fontSize);
+                if (currentSize) {
+                    el.style.fontSize = (currentSize + step) + 'px';
+                }
+            });
+        }
+
+        function toggleGrayscale() {
+            document.documentElement.classList.toggle('grayscale-mode');
+        }
+
+        // --- PCM to WAV conversion for Gemini TTS ---
+        function pcmToWav(base64Data, sampleRate = 24000) {
+            const byteCharacters = atob(base64Data);
+            const byteArray = new Uint8Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) { byteArray[i] = byteCharacters.charCodeAt(i); }
+            const buffer = byteArray.buffer;
+            const wavHeader = new ArrayBuffer(44);
+            const view = new DataView(wavHeader);
+            view.setUint32(0, 0x52494646, false); // "RIFF"
+            view.setUint32(4, 36 + buffer.byteLength, true);
+            view.setUint32(8, 0x57415645, false); // "WAVE"
+            view.setUint32(12, 0x666d7420, false); // "fmt "
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            view.setUint32(36, 0x64617461, false); // "data"
+            view.setUint32(40, buffer.byteLength, true);
+            const blob = new Blob([wavHeader, buffer], { type: 'audio/wav' });
+            return URL.createObjectURL(blob);
+        }
+
+        async function speakContent() {
+            let textParts = [];
+            
+            const h1Element = document.querySelector('h1');
+            if (h1Element) textParts.push(h1Element.innerText);
+            
+            textParts.push("Secțiunea Despre.");
+            document.querySelectorAll('#despre p').forEach(p => {
+                if (p.innerText.trim().length > 0) {
+                    textParts.push(p.innerText);
+                }
+            });
+            
+            textParts.push("Secțiunea Servicii.");
+            document.querySelectorAll('#servicii h3').forEach(h3 => {
+                 if (h3.innerText.trim().length > 0) {
+                    textParts.push(h3.innerText);
+                 }
+            });
+            
+            textParts.push("Întrebări frecvente.");
+            document.querySelectorAll('.modern-accordion-item').forEach(item => {
+                const q = item.querySelector('.modern-accordion-header span').innerText;
+                const a = item.querySelector('.custom-scroll').innerText;
+                textParts.push(q);
+                textParts.push(a);
+            });
+            
+            const textToRead = textParts.filter(Boolean).join('. ');
+            const promptText = `Citește clar, cu intonație naturală și profesională de femeie: ${textToRead}`;
+            
+            if (window.currentAudio) { window.currentAudio.pause(); window.currentAudio = null; }
+
+            const apiKey = ""; // API key furnizat de mediu (AICI TREBUIE PUSĂ CHEIA PENTRU LOCAL)
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: promptText }] }],
+                generationConfig: {
+                    responseModalities: ["AUDIO"],
+                    speechConfig: {
+                        voiceConfig: {
+                            prebuiltVoiceConfig: {
+                                voiceName: "Leda"
+                            }
+                        }
+                    }
+                }
+            };
+
+            const callWithRetry = async (retries = 5, delay = 1000) => {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error('API Error');
+                    const result = await response.json();
+                    const base64Audio = result.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+                    if (base64Audio) { 
+                        const audioUrl = pcmToWav(base64Audio); 
+                        window.currentAudio = new Audio(audioUrl); 
+                        window.currentAudio.play(); 
+                    }
+                } catch (e) {
+                    if (retries > 0) setTimeout(() => callWithRetry(retries - 1, delay * 2), delay);
+                }
+            };
+
+            callWithRetry();
+        }
+
+        function resetAccessibility() {
+            document.documentElement.classList.remove('grayscale-mode');
+            document.querySelectorAll('p, span, li, h1, h2, h3, h4, a').forEach(el => el.style.fontSize = '');
+            if (window.currentAudio) { window.currentAudio.pause(); window.currentAudio = null; }
+            window.speechSynthesis.cancel();
+        }
+
+        // --- COOKIE BANNER & GOOGLE ANALYTICS ---
+        const trackingID = 'G-29CE0BDJFV'; // Se poate înlocui cu id-ul real Google Analytics
+
+        function loadAnalytics() {
+            if(document.querySelector(`script[src*="${trackingID}"]`)) return;
+            const script = document.createElement('script');
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingID}`;
+            script.async = true;
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', trackingID);
+        }
+
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const rejectBtn = document.getElementById('reject-cookies');
+        const consent = localStorage.getItem('cookieConsent');
+
+        if (consent === 'accepted') {
+            loadAnalytics();
+        } else if (consent === 'rejected') {
+            // No analytics
+        } else {
+            if (banner) banner.style.display = 'block';
+        }
+
+        if(acceptBtn) {
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.style.display = 'none';
+                loadAnalytics(); 
+            });
+        }
+
+        if(rejectBtn) {
+            rejectBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'rejected');
+                banner.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
