@@ -57,11 +57,6 @@
             border-bottom: 1px solid rgba(74, 68, 66, 0.05);
         }
 
-        /* Mobile Menu */
-        #mobile-menu { transition: opacity 0.3s ease-in-out, visibility 0.3s; }
-        .hidden-menu { opacity: 0; visibility: hidden; pointer-events: none; }
-        .visible-menu { opacity: 1; visibility: visible; pointer-events: auto; }
-
         /* Stiluri Politici */
         .policy-section h2 { color: var(--brand-accent); font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(107, 64, 60, 0.1); padding-bottom: 0.5rem; }
         .policy-section h3 { color: #4a4442; font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.75rem; font-weight: 600; }
@@ -177,91 +172,55 @@
 </head>
 <body class="bg-[#f7f3f1] text-[#4a4442] antialiased selection:bg-[#cea18d] selection:text-white">
 
-    <!-- Navigație Desktop -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- Navigație Fluidă și Adaptabilă -->
+    <nav class="fixed w-full z-50 glass-nav transition-transform duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 py-2 md:h-20 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0">
+            <!-- Logo imagine -->
             <a href="index.html" class="flex items-center group">
                 <img src="logo.png" alt="Logo Cabinet" class="h-12 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
             
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+            <!-- Linkuri Central (vizibile pe mobil și desktop) -->
+            <div class="flex items-center justify-center flex-wrap gap-4 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
                 <a href="index.html" class="hover:text-[#cea18d] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">Acasă</a>
                 <a href="despre.html" class="hover:text-[#cea18d] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">Despre</a>
                 
                 <!-- Dropdown Servicii -->
-                <div class="relative group py-6 text-sm">
+                <div class="relative group py-1 md:py-6">
                     <a href="javascript:void(0)" class="hover:text-[#cea18d] transition-colors relative flex items-center gap-1.5 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">
-                        Servicii <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"></i>
+                        Servicii <i data-lucide="chevron-down" class="w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 group-hover:rotate-180"></i>
                     </a>
-                    <div class="absolute left-1/2 -translate-x-1/2 top-[70%] mt-2 w-64 bg-white border border-[#4a4442]/5 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col overflow-hidden text-left">
-                        <a href="servicii.html" class="px-5 py-4 text-sm font-medium text-[#4a4442]/80 hover:bg-[#f7f3f1] hover:text-[#cea18d] transition-colors border-b border-[#4a4442]/5 uppercase tracking-wide">Servicii Oferite</a>
-                        <a href="cadru-terapeutic.html" class="px-5 py-4 text-sm font-medium text-[#4a4442]/80 hover:bg-[#f7f3f1] hover:text-[#cea18d] transition-colors uppercase tracking-wide">Cadru Terapeutic & Politici</a>
+                    <!-- Submeniu ascuns implicit, vizibil la hover -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full md:top-[70%] mt-2 w-56 md:w-64 bg-white border border-[#4a4442]/5 shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 flex flex-col overflow-hidden text-center md:text-left">
+                        <a href="servicii.html" class="px-4 py-3 md:px-5 md:py-4 text-xs md:text-sm font-medium text-[#4a4442]/80 hover:bg-[#f7f3f1] hover:text-[#cea18d] transition-colors border-b border-[#4a4442]/5">Servicii Oferite</a>
+                        <a href="cadru-terapeutic.html" class="px-4 py-3 md:px-5 md:py-4 text-xs md:text-sm font-medium text-[#4a4442]/80 hover:bg-[#f7f3f1] hover:text-[#cea18d] transition-colors">Cadru Terapeutic & Politici</a>
                     </div>
                 </div>
 
                 <a href="contact.html" class="hover:text-[#cea18d] transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[#cea18d] after:transition-all hover:after:w-full">Contact</a>
             </div>
 
-            <!-- Social Icons & Contact -->
-            <div class="hidden md:flex items-center gap-4">
-                <a href="https://wa.me/40771611430" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
-                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <!-- Social Icons & Contact (vizibile pe mobil și desktop) -->
+            <div class="flex items-center gap-3 md:gap-4 pb-2 md:pb-0">
+                 <a href="https://wa.me/40771611430" target="_blank" class="w-7 h-7 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                    <i data-lucide="message-circle" class="w-3 h-3 md:w-4 md:h-4"></i>
                 </a>
-                <a href="mailto:anamariasfirca.psiholog@gmail.com" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
+                <a href="mailto:anamariasfirca.psiholog@gmail.com" class="w-7 h-7 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                    <i data-lucide="mail" class="w-3 h-3 md:w-4 md:h-4"></i>
                 </a>
-                <a href="https://instagram.com/anasfirca_psihozone" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <a href="https://instagram.com/anasfirca_psihozone" target="_blank" class="w-7 h-7 md:w-9 md:h-9 flex items-center justify-center rounded-full bg-[#cea18d] text-white hover:bg-[#b89083] transition-all duration-300 hover:-translate-y-1 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 md:w-4 md:h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
                 
-                <div class="w-px h-6 bg-[#4a4442]/20 mx-1"></div>
+                <div class="w-px h-5 bg-[#4a4442]/20 mx-0.5 md:mx-1 hidden md:block"></div>
 
-                <a href="contact.html" class="px-5 py-2.5 bg-[#6b403c] text-white rounded-lg hover:bg-[#54322f] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 text-sm font-medium uppercase tracking-wide">Programări</a>
+                <a href="contact.html" class="px-4 py-2 md:px-5 md:py-2.5 bg-[#6b403c] text-white rounded-lg hover:bg-[#54322f] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 text-xs md:text-sm font-medium uppercase tracking-wide">Programări</a>
             </div>
-
-            <!-- Buton Meniu Mobil -->
-            <button class="md:hidden p-2 text-[#4a4442]/80 hover:text-[#cea18d] transition-colors" onclick="toggleMenu()" aria-label="Toggle menu">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
         </div>
     </nav>
 
-    <!-- Navigație Mobil (Overlay) -->
-    <div id="mobile-menu" class="hidden-menu fixed inset-0 z-[60] bg-[#f7f3f1]/95 backdrop-blur-xl flex flex-col justify-center items-center text-center">
-        <button onclick="toggleMenu()" class="absolute top-6 right-6 p-2 text-[#4a4442]/60 hover:text-[#cea18d] hover:rotate-90 transition-all duration-300">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        
-        <div class="flex flex-col gap-8 text-xl font-medium uppercase tracking-widest items-center text-[#4a4442]">
-            <a href="index.html" class="hover:text-[#cea18d] transition-colors">Acasă</a>
-            <a href="despre.html" class="hover:text-[#cea18d] transition-colors">Despre</a>
-            
-            <div class="flex flex-col items-center gap-5 border-y border-[#4a4442]/10 py-6 my-2 w-64">
-                <span class="text-sm text-[#4a4442]/40 font-bold tracking-widest uppercase">SERVICII</span>
-                <a href="servicii.html" class="text-base text-[#4a4442]/80 hover:text-[#cea18d] transition-colors">Servicii Oferite</a>
-                <a href="cadru-terapeutic.html" class="text-base text-[#4a4442]/80 hover:text-[#cea18d] transition-colors">Cadru Terapeutic & Politici</a>
-            </div>
-
-            <a href="contact.html" class="hover:text-[#cea18d] transition-colors">Contact</a>
-            
-            <div class="flex gap-6 mt-2 justify-center">
-                 <a href="https://wa.me/40771611430" class="w-12 h-12 flex items-center justify-center rounded-full bg-[#cea18d] text-white shadow-lg">
-                    <i data-lucide="message-circle" class="w-6 h-6"></i>
-                </a>
-                <a href="mailto:anamariasfirca.psiholog@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full bg-[#cea18d] text-white shadow-lg">
-                    <i data-lucide="mail" class="w-6 h-6"></i>
-                </a>
-                <a href="https://instagram.com/anasfirca_psihozone" class="w-12 h-12 flex items-center justify-center rounded-full bg-[#cea18d] text-white shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                </a>
-            </div>
-            <a href="contact.html" class="mt-2 px-8 py-4 bg-[#6b403c] text-white rounded-full hover:bg-[#54322f] transition-all shadow-lg text-lg">Programări</a>
-        </div>
-    </div>
-
-    <!-- Header Pagină -->
-    <header class="pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fdfcfb] border-b border-[#4a4442]/5">
-        <div class="max-w-4xl mx-auto px-6 text-center fade-in">
+    <header class="pt-44 pb-16 md:pt-48 md:pb-24 bg-[#fdfcfb] border-b border-[#4a4442]/5">
+        <div class="max-w-4xl mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-5xl font-medium text-[#4a4442] mb-6">Termeni și Politici</h1>
             <p class="text-lg text-[#4a4442]/70 font-light max-w-2xl mx-auto leading-relaxed">
                 Transparența și protecția datelor tale sunt esențiale în cadrul acestui cabinet.
@@ -271,7 +230,7 @@
 
     <!-- Conținut Politici -->
     <main class="py-20 px-6">
-        <div class="max-w-4xl mx-auto policy-section fade-in">
+        <div class="max-w-4xl mx-auto policy-section">
             <p class="italic opacity-60 mb-10">Ultima actualizare: Iunie 2026</p>
 
             <p>Această pagină descrie modul în care datele tale personale sunt gestionate atunci când utilizezi acest website și când folosești formularul de contact disponibil.</p>
@@ -420,26 +379,21 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Funcție Toggle Menu Mobil
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const body = document.body;
-            if (menu.classList.contains('hidden-menu')) {
-                menu.classList.remove('hidden-menu');
-                menu.classList.add('visible-menu');
-                body.style.overflow = 'hidden';
-                lenis.stop();
+        // --- SMART HEADER LOGIC (Mobil) ---
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 900) {
+                if (window.scrollY > lastScrollY && window.scrollY > 50) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScrollY = window.scrollY;
             } else {
-                menu.classList.add('hidden-menu');
-                menu.classList.remove('visible-menu');
-                body.style.overflow = 'auto';
-                lenis.start();
+                navbar.style.transform = 'translateY(0)';
             }
-        }
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                toggleMenu();
-            });
         });
 
         // --- BUTON BACK TO TOP ---
